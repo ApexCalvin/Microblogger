@@ -1,14 +1,19 @@
 package com.calvin.microblogging.Post;
 
 import com.calvin.microblogging.Account.Account;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
+@Entity
 public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Date dateTime;
     private String message;
-    private Account assocAccount;
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    private Account assocAccount;
 
     public Post() {
     }
@@ -37,11 +42,11 @@ public class Post {
         this.message = message;
     }
 
-    public Account getAssocAccount() {
-        return assocAccount;
-    }
-
-    public void setAssocAccount(Account assocAccount) {
-        this.assocAccount = assocAccount;
-    }
+//    public Account getAssocAccount() {
+//        return assocAccount;
+//    }
+//
+//    public void setAssocAccount(Account assocAccount) {
+//        this.assocAccount = assocAccount;
+//    }
 }
