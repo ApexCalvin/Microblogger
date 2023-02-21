@@ -1,14 +1,21 @@
 package com.calvin.microblogging.Account;
 
 import com.calvin.microblogging.Post.Post;
+import jakarta.persistence.*;
 
 import java.util.List;
 
+@Entity
 public class Account {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    //@Column(nullable = false)
     private String handle;
     private String name;
-    private List<Post> userPosts;
+    private String username;
+    private String password;
+    //private List<Post> userPosts;
 
     public Account() {
     }
@@ -37,11 +44,11 @@ public class Account {
         this.name = name;
     }
 
-    public List<Post> getUserPosts() {
-        return userPosts;
-    }
-
-    public void setUserPosts(List<Post> userPosts) {
-        this.userPosts = userPosts;
-    }
+//    public List<Post> getUserPosts() {
+//        return userPosts;
+//    }
+//
+//    public void setUserPosts(List<Post> userPosts) {
+//        this.userPosts = userPosts;
+//    }
 }
