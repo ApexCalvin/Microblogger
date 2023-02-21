@@ -1,0 +1,34 @@
+Account
+
+Entity
+------
+- add image to account
+
+- add nullables and test
+
+* create userPosts relationships/annotations
+
+Repo
+----
+
+
+Service
+-------
+- saveAccount, will not take manual null id
+
+- editAccountById, fix "+id+" in return
+
+- editAccountById, fixe "saves" with no id but not in saveAccount
+
+Controller
+----------
+- figure out why getAccountByHandle works this way
+    instead of /searchHandle/
+
+- use profileDTO for getAccountByHandle
+    * can null other APIs
+
+- Set up response entities in Account Controller
+
+
+

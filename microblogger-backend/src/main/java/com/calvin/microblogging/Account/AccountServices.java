@@ -19,9 +19,8 @@ public class AccountServices {
      */
 
     public String saveAccount(Account account) {
-        //TODO - learn about Optional
         Optional<Account> exist = accountRepository.findById(account.getId());
-        //will not take manual null id
+
         if(exist.isEmpty()) {
             accountRepository.save(account);
             return "Account has been created.";
@@ -49,7 +48,6 @@ public class AccountServices {
     }
 
     public String editAccountById(Integer id, Account accWithEdits) {
-
         Optional<Account> exist = accountRepository.findById(id);
 
         if(exist.isPresent()) {

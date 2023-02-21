@@ -15,7 +15,7 @@ public class Account {
     private String name;
     private String username;
     private String password;
-    //private List<Post> userPosts;
+    private List<Post> userPosts;
 
     public Account() {
     }
@@ -44,11 +44,11 @@ public class Account {
         this.name = name;
     }
 
-//    public List<Post> getUserPosts() {
-//        return userPosts;
-//    }
-//
-//    public void setUserPosts(List<Post> userPosts) {
-//        this.userPosts = userPosts;
-//    }
+    public List<Post> getUserPosts() {
+        return userPosts;
+    }
+
+    public void setUserPosts(List<Post> userPosts) {
+        this.userPosts = userPosts;
+    }
 }

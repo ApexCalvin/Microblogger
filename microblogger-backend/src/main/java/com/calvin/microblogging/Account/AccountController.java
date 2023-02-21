@@ -4,11 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/account")
-@CrossOrigin("http://localhost:8080") //TODO - change localhost:3000 to send data to frontend
+@CrossOrigin("http://localhost:8080") //localhost:3000 to send data to frontend
 public class AccountController {
     @Autowired
     AccountServices accountServices;
