@@ -14,21 +14,19 @@ Repo
 
 Service
 -------
-- saveAccount, will not take manual null id
-
-- editAccountById, fix "+id+" in return
-
-- editAccountById, fixe "saves" with no id but not in saveAccount
+- (1) saveAccount, will not take manual null id but edit with no id saves
 
 Controller
 ----------
-- figure out why getAccountByHandle works this way
+- (2) Set up response entities in Account Controller
+
+- (2.5) edit method
+
+- (3) figure out why getAccountByHandle works this way
     instead of /searchHandle/
 
-- use profileDTO for getAccountByHandle
+- (4) use profileDTO for getAccountByHandle
     * can null other APIs
-
-- Set up response entities in Account Controller
 
 
 

@@ -1,3 +1,4 @@
+
 package com.calvin.microblogging.Post;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,6 @@ public class PostServices {
     }
 
     public Post getPostById(Integer id) {
-        //TODO - learn about optionals
         return postRepository.findById(id).get();
     }
 

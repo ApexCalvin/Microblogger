@@ -19,13 +19,8 @@ public class AccountServices {
      */
 
     public String saveAccount(Account account) {
-        Optional<Account> exist = accountRepository.findById(account.getId());
-
-        if(exist.isEmpty()) {
-            accountRepository.save(account);
-            return "Account has been created.";
-        }
-        return "Failed to create account.";
+        accountRepository.save(account);
+        return "Account id "+account.getId()+" has been created.";
     }
 
     public List<Account> findAllAccounts() {
@@ -33,7 +28,6 @@ public class AccountServices {
     }
 
     public Account findAccountById(Integer id) {
-        //Optional<Account> exist = accountRepository.findById(id);
         return accountRepository.findById(id).get();
     }
 
@@ -51,10 +45,11 @@ public class AccountServices {
         Optional<Account> exist = accountRepository.findById(id);
 
         if(exist.isPresent()) {
-            //fix no id with response
-            accountRepository.save(accWithEdits);
-            //fix +id+
-            return "Account ID: \"+id+\" has been edited.";
+            if(accWithEdits.getId() != null) {
+                accountRepository.save(accWithEdits);
+                return "Account ID: "+id+" has been edited.";
+            }
+            return "JSON object is missing an account ID.";
         }
         return "Failed to edit Account ID: "+id;
     }
