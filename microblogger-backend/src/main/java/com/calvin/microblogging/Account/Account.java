@@ -9,10 +9,13 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    //@Column(nullable = false)
+    @Column(nullable = false)
     private String handle;
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
     private String username;
+    @Column(nullable = false)
     private String password;
     //private List<Post> userPosts;
 
@@ -43,7 +46,15 @@ public class Account {
         this.name = name;
     }
 
-//    public List<Post> getUserPosts() {
+    public String getUsername() { return username; }
+
+    public void setUsername(String username) { this.username = username; }
+
+    public String getPassword() { return password; }
+
+    public void setPassword(String password) { this.password = password; }
+
+    //    public List<Post> getUserPosts() {
 //        return userPosts;
 //    }
 //

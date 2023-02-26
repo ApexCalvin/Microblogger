@@ -47,11 +47,24 @@ public class AccountController {
     }
 
     @GetMapping("/handle/{handle}") //localhost:8080/account/handle/variableName
-    public ResponseEntity<Optional<Account>> getAccountByHandle(@PathVariable String handle) {
-            Optional<Account> account = Optional.ofNullable(accountRepository.findAccountByHandle(handle));
-            if(account.isPresent()) return new ResponseEntity<>(account, HttpStatus.OK);
+    public ResponseEntity<profileDTO> getAccountByHandle(@PathVariable String handle) {
+        try {
+            profileDTO profile = accountServices.findAccountByHandle(handle);
+            return new ResponseEntity<>(profile, HttpStatus.OK);
+        }catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
+
+//    @GetMapping("/handle/{handle}") //localhost:8080/account/handle/variableName
+//    public ResponseEntity<profileDTO> getAccountByHandle(@PathVariable String handle) {
+//            Optional<Account> exist = Optional.ofNullable(accountRepository.findAccountByHandle(handle));
+//            if(exist.isPresent()){
+//                profileDTO profile = accountServices.saveToProfileDTO(exist.get());
+//                return new ResponseEntity<>(profile, HttpStatus.OK);
+//            }
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//    }
 
     @GetMapping("/") //localhost:8080/account/?handle=variableName
     public Account getAccountByHandle2(@RequestParam String handle) {

@@ -1,0 +1,19 @@
+Account
+
+Entity
+------
+- add image to account?
+
+- (1) create userPosts relationships/annotations
+
+Repo
+----
+
+
+Service
+-------
+
+
+Controller
+----------
+

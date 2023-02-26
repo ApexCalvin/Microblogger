@@ -53,4 +53,17 @@ public class AccountServices {
         }
         return "Failed to edit Account ID: "+id;
     }
+
+    public profileDTO findAccountByHandle (String handle) {
+        Optional<Account> exist = Optional.ofNullable(accountRepository.findAccountByHandle(handle));
+        return saveToProfileDTO(exist.get());
+    }
+
+    public profileDTO saveToProfileDTO(Account account) {
+        profileDTO profile = new profileDTO();
+        profile.setAccount_id(account.getId());
+        profile.setName(account.getName());
+        profile.setHandle(account.getHandle());
+        return profile;
+    }
 }
