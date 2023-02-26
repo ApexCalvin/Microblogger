@@ -18,35 +18,19 @@ public class Post {
     public Post() {
     }
 
-    public Integer getId() {
-        return id;
-    }
+    public Integer getId() { return id; }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    public void setId(Integer id) { this.id = id; }
 
-    public Date getDateTime() {
-        return dateTime;
-    }
+    public Date getDateTime() { return dateTime; }
 
-    public void setDateTime(Date dateTime) {
-        this.dateTime = dateTime;
-    }
+    public void setDateTime(Date dateTime) { this.dateTime = dateTime; }
 
-    public String getMessage() {
-        return message;
-    }
+    public String getMessage() { return message; }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
+    public void setMessage(String message) { this.message = message; }
 
-//    public Account getAssocAccount() {
-//        return assocAccount;
-//    }
-//
-//    public void setAssocAccount(Account assocAccount) {
-//        this.assocAccount = assocAccount;
-//    }
+    //public Account getAssocAccount() { return assocAccount; }
+
+    //public void setAssocAccount(Account assocAccount) { this.assocAccount = assocAccount; }
 }

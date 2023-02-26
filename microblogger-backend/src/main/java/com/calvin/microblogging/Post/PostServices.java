@@ -18,17 +18,13 @@ public class PostServices {
     Delete  |   Delete                  |   Delete
      */
 
-    public void savePost(Post post) {
-        postRepository.save(post);
-    }
+    public void savePost(Post post) { postRepository.save(post); }
 
-    public Post getPostById(Integer id) {
-        return postRepository.findById(id).get();
-    }
-
-    public List<Post> getAllPosts() {
+    public List<Post> findAllPosts() {
         return postRepository.findAll();
     }
+
+    public Post findPostById(Integer id) { return postRepository.findById(id).get(); }
 
     public void deletePostById(Integer id) {
         postRepository.deleteById(id);

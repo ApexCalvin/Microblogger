@@ -15,8 +15,6 @@ import java.util.Optional;
 public class AccountController {
     @Autowired
     AccountServices accountServices;
-    @Autowired
-    AccountRepository accountRepository;
 
     @PostMapping("/add")
     public String addAccount(@RequestBody Account account) { return accountServices.saveAccount(account); }
@@ -65,6 +63,9 @@ public class AccountController {
 //            }
 //            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 //    }
+
+    @Autowired
+    AccountRepository accountRepository;
 
     @GetMapping("/") //localhost:8080/account/?handle=variableName
     public Account getAccountByHandle2(@RequestParam String handle) {

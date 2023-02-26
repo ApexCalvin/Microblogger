@@ -1,5 +1,6 @@
 package com.calvin.microblogging.Account;
 
+import com.calvin.microblogging.Post.Post;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -19,8 +20,7 @@ public class Account {
     private String password;
     //private List<Post> userPosts;
 
-    public Account() {
-    }
+    public Account() {}
 
     public Integer getId() {
         return id;
@@ -54,11 +54,7 @@ public class Account {
 
     public void setPassword(String password) { this.password = password; }
 
-    //    public List<Post> getUserPosts() {
-//        return userPosts;
-//    }
-//
-//    public void setUserPosts(List<Post> userPosts) {
-//        this.userPosts = userPosts;
-//    }
+    //public List<Post> getUserPosts() { return userPosts; }
+
+    //public void setUserPosts(List<Post> userPosts) { this.userPosts = userPosts; }
 }
