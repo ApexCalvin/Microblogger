@@ -15,44 +15,27 @@ public class PostController {
     @Autowired
     PostServices postServices;
 
-//    @PostMapping("/add")
-//    public String addPost(@RequestBody Post post) {
-//        //TODO - createPost error handling
-//        //Boolean exist = postServices.savePost(post);
-//        //if(exist) return "Post has been created.";
-//        return "Failed to create post.";
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public String deletePost(@PathVariable Integer id) {
-//        postServices.deletePostById(id);
-//        return "Post ID "+id+" has been deleted.";
-//    }
-//
-//    @GetMapping("/all")
-//    public List<Post> findAllPosts() {
-//        return postServices.getAllPosts();
-//    }
-//
-//    @GetMapping("/{id}")
-//    public ResponseEntity<Post> findPostByAccountId(@PathVariable Integer id) {
-//        //TODO - learn about Response Entities
-//        try {
-//            Post test = postServices.getPostById(id);
-//            return new ResponseEntity<>(test, HttpStatus.OK);
-//        } catch (NoSuchElementException e) {
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        }
-//    }
-//
-//    @PutMapping("/{id}")
-//    public ResponseEntity<Post> editPost(@PathVariable Integer id, @RequestBody Post post) {
-//        //TODO - figure out how to edit posts
-//        try {
-//            Post test = postServices.getPostById(id);
-//            return new ResponseEntity<>(test, HttpStatus.OK);
-//        } catch (NoSuchElementException e) {
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        }
-//    }
+    @PostMapping("/add")
+    public String addPost(@RequestBody PostModel post) { return postServices.savePost(post); }
+
+    @GetMapping("/all")
+    public List<PostModel> getAllPosts() { return postServices.findAllPosts(); }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<PostModel> getPostByAccountId(@PathVariable Integer id) {
+        try {
+            PostModel post = postServices.findPostById(id);
+            return new ResponseEntity<>(post, HttpStatus.OK);
+        } catch (NoSuchElementException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public String deletePost(@PathVariable Integer id) { return postServices.deletePostById(id); }
+
+    @PutMapping("/{id}")
+    public String editPostById(@PathVariable Integer id, @RequestBody PostModel postWithEdits) {
+        return postServices.editPostById(id, postWithEdits);
+    }
 }

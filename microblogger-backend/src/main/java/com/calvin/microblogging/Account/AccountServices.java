@@ -18,21 +18,21 @@ public class AccountServices {
     Delete  |   Delete                  |   Delete
      */
 
-    public String saveAccount(Account account) {
+    public String saveAccount(AccountModel account) {
         accountRepository.save(account);
         return "Account id "+account.getId()+" has been created.";
     }
 
-    public List<Account> findAllAccounts() {
+    public List<AccountModel> findAllAccounts() {
         return accountRepository.findAll();
     }
 
-    public Account findAccountById(Integer id) {
+    public AccountModel findAccountById(Integer id) {
         return accountRepository.findById(id).get();
     }
 
     public String deleteAccountById(Integer id) {
-        Optional<Account> exist = accountRepository.findById(id);
+        Optional<AccountModel> exist = accountRepository.findById(id);
 
         if(exist.isPresent()) {
             accountRepository.deleteById(id);
@@ -41,8 +41,8 @@ public class AccountServices {
         return "Account ID: "+id+" does not exist.";
     }
 
-    public String editAccountById(Integer id, Account accWithEdits) {
-        Optional<Account> exist = accountRepository.findById(id);
+    public String editAccountById(Integer id, AccountModel accWithEdits) {
+        Optional<AccountModel> exist = accountRepository.findById(id);
 
         if(exist.isPresent()) {
             if(accWithEdits.getId() != null) {
@@ -55,11 +55,11 @@ public class AccountServices {
     }
 
     public profileDTO findAccountByHandle (String handle) {
-        Optional<Account> exist = Optional.ofNullable(accountRepository.findAccountByHandle(handle));
+        Optional<AccountModel> exist = Optional.ofNullable(accountRepository.findAccountModelByHandle(handle));
         return saveToProfileDTO(exist.get());
     }
 
-    public profileDTO saveToProfileDTO(Account account) {
+    public profileDTO saveToProfileDTO(AccountModel account) {
         profileDTO profile = new profileDTO();
         profile.setAccount_id(account.getId());
         profile.setName(account.getName());

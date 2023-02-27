@@ -1,22 +1,21 @@
 package com.calvin.microblogging.Post;
 
-import com.calvin.microblogging.Account.Account;
 import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
-public class Post {
+public class PostModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Date dateTime;
+    private Date dateTime; //2023-02-27T14:52:50.197+00:00
     private String message;
+    private Boolean edited = false;
 //    @ManyToOne(fetch = FetchType.EAGER)
 //    private Account assocAccount;
 
-    public Post() {
-    }
+    public PostModel() {}
 
     public Integer getId() { return id; }
 
@@ -29,6 +28,10 @@ public class Post {
     public String getMessage() { return message; }
 
     public void setMessage(String message) { this.message = message; }
+
+    public Boolean getEdited() { return edited; }
+
+    public void setEdited(Boolean edited) { this.edited = edited; }
 
     //public Account getAssocAccount() { return assocAccount; }
 
