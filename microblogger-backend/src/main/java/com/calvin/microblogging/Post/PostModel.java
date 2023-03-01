@@ -5,6 +5,23 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
+//@NamedNativeQuery(name = "findPostsDESC",
+//        query = """
+//                SELECT * FROM post_model ORDER BY date_time DESC;
+//                """,
+//        resultSetMapping = "mapToPostModel")
+//
+//@SqlResultSetMapping(
+//        name = "mapToPostModel",
+//        classes = @ConstructorResult(targetClass = PostModel.class,
+//                                        columns = {
+//                                                    @ColumnResult(name = "id", type = Integer.class),
+//                                                    @ColumnResult(name = "date_time", type = Date.class),
+//                                                    @ColumnResult(name = "message", type = String.class),
+//                                                    @ColumnResult(name = "edited", type = Boolean.class) }
+//        )
+//)
+
 public class PostModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

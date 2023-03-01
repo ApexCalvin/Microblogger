@@ -38,4 +38,10 @@ public class PostController {
     public String editPostById(@PathVariable Integer id, @RequestBody PostModel postWithEdits) {
         return postServices.editPostById(id, postWithEdits);
     }
+
+//    @Autowired
+//    PostRepository postRepository;
+//
+//    @GetMapping("/all/desc")
+//    public List<PostModel> getAllPostsDESC() { return postRepository.findPostsDESC(); }
 }

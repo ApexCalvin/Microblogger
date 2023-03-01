@@ -1,0 +1,12 @@
+USE mb;
+INSERT INTO `mb`.`account_model` (`handle`, `name`, `username`, `password`) VALUES ('captain', 'steve', 'rodgers', 'avenger');
+INSERT INTO `mb`.`account_model` (`handle`, `name`, `username`, `password`) VALUES ('ironman', 'tony', 'stark', 'avenger');
+INSERT INTO `mb`.`account_model` (`handle`, `name`, `username`, `password`) VALUES ('thunder', 'thor', 'demigod', 'avenger');
+INSERT INTO `mb`.`account_model` (`handle`, `name`, `username`, `password`) VALUES ('hulk', 'bruce', 'banner', 'avenger');
+INSERT INTO `mb`.`account_model` (`handle`, `name`, `username`, `password`) VALUES ('widow', 'natasha', 'romanoff', 'avenger');
+INSERT INTO `mb`.`account_model` (`handle`, `name`, `username`, `password`) VALUES ('hawk', 'clint', 'barton', 'avenger');
+INSERT INTO `mb`.`post_model` (`date_time`, `message`, `edited`) VALUES ('2023-01-06 08:00:00.000000', 'January', b'0');
+INSERT INTO `mb`.`post_model` (`date_time`, `message`, `edited`) VALUES ('2023-02-07 10:15:00.000000', 'February', b'0');
+INSERT INTO `mb`.`post_model` (`date_time`, `message`, `edited`) VALUES ('2023-03-08 12:20:00.000000', 'March', b'0');
+INSERT INTO `mb`.`post_model` (`date_time`, `message`, `edited`) VALUES ('2023-04-09 14:30:00.000000', 'April', b'0');
+INSERT INTO `mb`.`post_model` (`date_time`, `message`, `edited`) VALUES ('2023-05-10 16:45:00.000000', 'June', b'0');

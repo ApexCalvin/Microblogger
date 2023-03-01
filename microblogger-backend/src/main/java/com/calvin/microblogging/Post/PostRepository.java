@@ -1,7 +1,10 @@
 package com.calvin.microblogging.Post;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface PostRepository extends JpaRepository<PostModel, Integer> {
@@ -19,4 +22,6 @@ public interface PostRepository extends JpaRepository<PostModel, Integer> {
         @Query(name = "query_name4", nativeQuery = true)
         List<PostListDTO> findPostsDESC();
      */
+//    @Query(name = "findPostsDESC", nativeQuery = true)
+//    List<PostModel> findPostsDESC();
 }
