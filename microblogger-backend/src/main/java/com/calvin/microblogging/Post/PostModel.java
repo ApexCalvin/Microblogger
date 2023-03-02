@@ -1,5 +1,6 @@
 package com.calvin.microblogging.Post;
 
+import com.calvin.microblogging.Account.AccountModel;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -29,8 +30,8 @@ public class PostModel {
     private Date dateTime; //2023-02-27T14:52:50.197+00:00
     private String message;
     private Boolean edited = false;
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    private Account assocAccount;
+    @ManyToOne
+    private AccountModel assocAccount;
 
     public PostModel() {}
 
@@ -50,7 +51,7 @@ public class PostModel {
 
     public void setEdited(Boolean edited) { this.edited = edited; }
 
-    //public Account getAssocAccount() { return assocAccount; }
+    public AccountModel getAssocAccount() { return assocAccount; }
 
-    //public void setAssocAccount(Account assocAccount) { this.assocAccount = assocAccount; }
+    public void setAssocAccount(AccountModel assocAccount) { this.assocAccount = assocAccount; }
 }

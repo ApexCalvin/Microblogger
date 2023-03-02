@@ -18,7 +18,8 @@ public class AccountModel {
     private String username;
     @Column(nullable = false)
     private String password;
-    //private List<PostModel> userPosts;
+    @OneToMany(mappedBy = "assocAccount")
+    private List<PostModel> userPosts;
 
     public AccountModel() {}
 
@@ -54,7 +55,7 @@ public class AccountModel {
 
     public void setPassword(String password) { this.password = password; }
 
-    //public List<PostModel> getUserPosts() { return userPosts; }
+    public List<PostModel> getUserPosts() { return userPosts; }
 
-    //public void setUserPosts(List<PostModel> userPosts) { this.userPosts = userPosts; }
+    public void setUserPosts(List<PostModel> userPosts) { this.userPosts = userPosts; }
 }
