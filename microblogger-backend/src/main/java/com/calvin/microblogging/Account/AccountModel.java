@@ -1,7 +1,10 @@
 package com.calvin.microblogging.Account;
 
 import com.calvin.microblogging.Post.PostModel;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.List;
 
@@ -18,8 +21,8 @@ public class AccountModel {
     private String username;
     @Column(nullable = false)
     private String password;
-    @OneToMany(mappedBy = "assocAccount")
-    private List<PostModel> userPosts;
+//    @OneToMany(mappedBy = "assocAccount")
+//    private List<PostModel> userPosts;
 
     public AccountModel() {}
 
@@ -55,7 +58,7 @@ public class AccountModel {
 
     public void setPassword(String password) { this.password = password; }
 
-    public List<PostModel> getUserPosts() { return userPosts; }
+    //public List<PostModel> getUserPosts() { return userPosts; }
 
-    public void setUserPosts(List<PostModel> userPosts) { this.userPosts = userPosts; }
+    //public void setUserPosts(List<PostModel> userPosts) { this.userPosts = userPosts; }
 }

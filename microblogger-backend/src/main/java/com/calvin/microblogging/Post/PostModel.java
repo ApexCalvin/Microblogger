@@ -30,8 +30,8 @@ public class PostModel {
     private Date dateTime; //2023-02-27T14:52:50.197+00:00
     private String message;
     private Boolean edited = false;
-    @ManyToOne
-    private AccountModel assocAccount;
+//    @ManyToOne
+//    private AccountModel assocAccount;
 
     public PostModel() {}
 
@@ -51,7 +51,7 @@ public class PostModel {
 
     public void setEdited(Boolean edited) { this.edited = edited; }
 
-    public AccountModel getAssocAccount() { return assocAccount; }
+    //public AccountModel getAssocAccount() { return assocAccount; }
 
-    public void setAssocAccount(AccountModel assocAccount) { this.assocAccount = assocAccount; }
+    //public void setAssocAccount(AccountModel assocAccount) { this.assocAccount = assocAccount; }
 }
